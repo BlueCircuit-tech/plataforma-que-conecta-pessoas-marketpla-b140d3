@@ -2166,6 +2166,292 @@ window.meus_pedidos_init=init;
 </script>
 </section>
 
+    <section data-tela="painel-do-anunciante" class="hidden">
+  <div class="fade-in">
+    <div class="px-5 pt-2 pb-4">
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <p class="text-sm text-gray-500 font-body">Boa tarde,</p>
+          <h1 class="text-xl font-display font-bold text-marca-900 leading-tight">Carlos Mendes</h1>
+        </div>
+        <div class="w-10 h-10 rounded-full bg-marca-100 flex items-center justify-center">
+          <svg class="w-5 h-5 text-marca-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+        </div>
+      </div>
+
+      <div class="bg-marca-900 rounded-2xl p-5 mb-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-marca-800 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+        <div class="relative">
+          <p class="text-marca-200 text-xs font-body mb-1">Saldo disponível para saque</p>
+          <p class="text-3xl font-display font-bold text-white mb-1" id="painel-saldo">R$ 2.847,50</p>
+          <button onclick="painel_do_anunciante_sacar()" class="mt-3 bg-marca-600 hover:bg-marca-500 active:scale-95 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 font-body">
+            Sacar agora
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <div class="card !p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+              <svg class="w-4 h-4 text-marca-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            </div>
+            <span class="text-xs text-gray-500 font-body">Visualizações hoje</span>
+          </div>
+          <p class="text-2xl font-display font-bold text-marca-900">847</p>
+          <span class="text-xs text-green-600 font-body">+12% vs ontem</span>
+        </div>
+        <div class="card !p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center">
+              <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+            </div>
+            <span class="text-xs text-gray-500 font-body">Mensagens não lidas</span>
+          </div>
+          <p class="text-2xl font-display font-bold text-orange-500">3</p>
+          <span class="text-xs text-gray-400 font-body">2 de Ana, 1 de Pedro</span>
+        </div>
+        <div class="card !p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center">
+              <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="text-xs text-gray-500 font-body">Anúncios ativos</span>
+          </div>
+          <p class="text-2xl font-display font-bold text-marca-900">12</p>
+          <span class="text-xs text-gray-400 font-body">2 aguardando aprovação</span>
+        </div>
+        <div class="card !p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center">
+              <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+            </div>
+            <span class="text-xs text-gray-500 font-body">Vendas no mês</span>
+          </div>
+          <p class="text-2xl font-display font-bold text-marca-900">R$ 4.280</p>
+          <span class="text-xs text-green-600 font-body">+8% vs mês anterior</span>
+        </div>
+      </div>
+
+      <div class="card !p-5 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-sm font-display font-bold text-marca-900">Visualizações</h2>
+            <p class="text-xs text-gray-400 font-body">Últimos 7 dias</p>
+          </div>
+          <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full font-body">+15%</span>
+        </div>
+        <svg viewBox="0 0 320 100" class="w-full h-24" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2563EB" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 85 L46 70 L92 78 L138 52 L184 60 L230 30 L276 42 L320 15 L320 100 L0 100 Z" fill="url(#chartGrad)"/>
+          <polyline points="0,85 46,70 92,78 138,52 184,60 230,30 276,42 320,15" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="0" cy="85" r="3.5" fill="#2563EB" stroke="white" stroke-width="1.5"/>
+          <circle cx="46" cy="70" r="3.5" fill="#2563EB" stroke="white" stroke-width="1.5"/>
+          <circle cx="92" cy="78" r="3.5" fill="#2563EB" stroke="white" stroke-width="1.5"/>
+          <circle cx="138" cy="52" r="3.5" fill="#2563EB" stroke="white" stroke-width="1.5"/>
+          <circle cx="184" cy="60" r="3.5" fill="#2563EB" stroke="white" stroke-width="1.5"/>
+          <circle cx="230" cy="30" r="3.5" fill="#2563EB" stroke="white" stroke-width="1.5"/>
+          <circle cx="276" cy="42" r="3.5" fill="#2563EB" stroke="white" stroke-width="1.5"/>
+          <circle cx="320" cy="15" r="4.5" fill="#2563EB" stroke="white" stroke-width="2"/>
+          <text x="0" y="97" text-anchor="middle" class="text-[8px]" fill="#9CA3AF" font-family="Inter, sans-serif">Seg</text>
+          <text x="46" y="97" text-anchor="middle" class="text-[8px]" fill="#9CA3AF" font-family="Inter, sans-serif">Ter</text>
+          <text x="92" y="97" text-anchor="middle" class="text-[8px]" fill="#9CA3AF" font-family="Inter, sans-serif">Qua</text>
+          <text x="138" y="97" text-anchor="middle" class="text-[8px]" fill="#9CA3AF" font-family="Inter, sans-serif">Qui</text>
+          <text x="184" y="97" text-anchor="middle" class="text-[8px]" fill="#9CA3AF" font-family="Inter, sans-serif">Sex</text>
+          <text x="230" y="97" text-anchor="middle" class="text-[8px]" fill="#9CA3AF" font-family="Inter, sans-serif">Sáb</text>
+          <text x="276" y="97" text-anchor="middle" class="text-[8px]" fill="#9CA3AF" font-family="Inter, sans-serif">Dom</text>
+          <text x="320" y="97" text-anchor="middle" class="text-[8px]" fill="#2563EB" font-family="Inter, sans-serif" font-weight="600">Hoje</text>
+        </svg>
+      </div>
+
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-base font-display font-bold text-marca-900">Pedidos Recentes</h2>
+          <button onclick="mostrarTela('meus-pedidos')" class="text-sm text-marca-600 font-semibold font-body hover:text-marca-700 transition-colors">Ver todos</button>
+        </div>
+        <div id="painel-lista-pedidos" class="space-y-2.5"></div>
+      </div>
+
+      <div>
+        <h2 class="text-base font-display font-bold text-marca-900 mb-3">Ações rápidas</h2>
+        <div class="space-y-2.5">
+          <button onclick="mostrarTela('meus-anuncios')" class="w-full bg-marca-900 hover:bg-marca-800 active:scale-[0.98] text-white rounded-2xl p-4 flex items-center gap-4 transition-all duration-200">
+            <div class="w-11 h-11 bg-marca-700 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </div>
+            <div class="text-left">
+              <p class="font-display font-bold text-sm">Criar Anúncio</p>
+              <p class="text-xs text-marca-300 font-body">Anuncie um produto ou serviço</p>
+            </div>
+            <svg class="w-5 h-5 text-marca-400 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <button onclick="mostrarTela('meus-anuncios')" class="w-full bg-white border border-gray-200 hover:border-marca-300 hover:bg-marca-50 active:scale-[0.98] text-marca-900 rounded-2xl p-4 flex items-center gap-4 transition-all duration-200">
+            <div class="w-11 h-11 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+            </div>
+            <div class="text-left">
+              <p class="font-display font-bold text-sm">Responder Mensagens</p>
+              <p class="text-xs text-gray-400 font-body">3 mensagens não lidas</p>
+            </div>
+            <div class="ml-auto flex items-center gap-2">
+              <span class="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold">3</span>
+            </div>
+          </button>
+          <button onclick="painel_do_anunciante_sacar()" class="w-full bg-white border border-gray-200 hover:border-marca-300 hover:bg-marca-50 active:scale-[0.98] text-marca-900 rounded-2xl p-4 flex items-center gap-4 transition-all duration-200">
+            <div class="w-11 h-11 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <div class="text-left">
+              <p class="font-display font-bold text-sm">Sacar</p>
+              <p class="text-xs text-gray-400 font-body">Disponível: R$ 2.847,50</p>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+'use strict';
+
+const pedidosRecentes = [
+  { id: 'PED-2847', comprador: 'Mariana Costa', avatar: 'MC', avatarCor: 'bg-pink-100 text-pink-700', valor: 349.90, data: '2025-01-15', status: 'entregue', statusLabel: 'Entregue', statusCor: 'bg-green-100 text-green-700', produto: 'Notebook Lenovo IdeaPad 3' },
+  { id: 'PED-2846', comprador: 'Pedro Henrique', avatar: 'PH', avatarCor: 'bg-blue-100 text-blue-700', valor: 189.00, data: '2025-01-15', status: 'enviado', statusLabel: 'Enviado', statusCor: 'bg-blue-100 text-blue-700', produto: 'Cadeira de Escritório Ergonomica' },
+  { id: 'PED-2845', comprador: 'Ana Beatriz', avatar: 'AB', avatarCor: 'bg-purple-100 text-purple-700', valor: 79.90, data: '2025-01-14', status: 'processando', statusLabel: 'Processando', statusCor: 'bg-yellow-100 text-yellow-700', produto: 'Kit Pincéis de Maquiagem Profissional' },
+  { id: 'PED-2844', comprador: 'Rafael Oliveira', avatar: 'RO', avatarCor: 'bg-green-100 text-green-700', valor: 599.00, data: '2025-01-14', status: 'entregue', statusLabel: 'Entregue', statusCor: 'bg-green-100 text-green-700', produto: 'Smartwatch Samsung Galaxy Watch' },
+  { id: 'PED-2843', comprador: 'Juliana Santos', avatar: 'JS', avatarCor: 'bg-red-100 text-red-700', valor: 129.90, data: '2025-01-13', status: 'entregue', statusLabel: 'Entregue', statusCor: 'bg-green-100 text-green-700', produto: 'Fone de Ouvido Bluetooth JBL' },
+  { id: 'PED-2842', comprador: 'Lucas Pereira', avatar: 'LP', avatarCor: 'bg-indigo-100 text-indigo-700', valor: 259.90, data: '2025-01-13', status: 'cancelado', statusLabel: 'Cancelado', statusCor: 'bg-red-100 text-red-700', produto: 'Mochila Impermeável 40L' },
+  { id: 'PED-2841', comprador: 'Fernanda Lima', avatar: 'FL', avatarCor: 'bg-teal-100 text-teal-700', valor: 459.00, data: '2025-01-12', status: 'enviado', statusLabel: 'Enviado', statusCor: 'bg-blue-100 text-blue-700', produto: 'Cafeteira Expresso Automática' },
+  { id: 'PED-2840', comprador: 'Ricardo Souza', avatar: 'RS', avatarCor: 'bg-amber-100 text-amber-700', valor: 99.90, data: '2025-01-12', status: 'entregue', statusLabel: 'Entregue', statusCor: 'bg-green-100 text-green-700', produto: 'Luminária LED de Mesa Touch' },
+];
+
+function painel_do_anunciante_renderizarPedidos() {
+  const container = document.getElementById('painel-lista-pedidos');
+  if (!container) return;
+  container.innerHTML = pedidosRecentes.map(p => {
+    const dataFormatada = new Date(p.data + 'T00:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
+    return '<div onclick="painel_do_anunciante_verPedido(\'' + p.id + '\')" class="card !p-3.5 flex items-center gap-3.5 cursor-pointer hover:shadow-md transition-all duration-200 active:scale-[0.98]">' +
+      '<div class="w-10 h-10 rounded-full ' + p.avatarCor + ' flex items-center justify-center flex-shrink-0">' +
+        '<span class="text-xs font-bold font-body">' + p.avatar + '</span>' +
+      '</div>' +
+      '<div class="flex-1 min-w-0">' +
+        '<div class="flex items-center justify-between">' +
+          '<p class="text-sm font-semibold text-marca-900 font-body truncate">' + p.comprador + '</p>' +
+          '<p class="text-sm font-bold text-marca-900 font-display flex-shrink-0 ml-2">R$ ' + p.valor.toFixed(2).replace('.', ',') + '</p>' +
+        '</div>' +
+        '<div class="flex items-center justify-between mt-1">' +
+          '<p class="text-xs text-gray-400 font-body truncate">' + p.produto + '</p>' +
+          '<span class="' + p.statusCor + ' text-[10px] font-semibold px-2 py-0.5 rounded-full font-body flex-shrink-0 ml-2">' + p.statusLabel + '</span>' +
+        '</div>' +
+        '<p class="text-[10px] text-gray-300 font-body mt-1">' + p.id + ' · ' + dataFormatada + '</p>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function painel_do_anunciante_verPedido(id) {
+  const pedido = pedidosRecentes.find(function(p) { return p.id === id; });
+  if (!pedido) return;
+  const dataFormatada = new Date(pedido.data + 'T00:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+  var html = '<div class="space-y-4">' +
+    '<div class="flex items-center gap-3">' +
+      '<div class="w-12 h-12 rounded-full ' + pedido.avatarCor + ' flex items-center justify-center">' +
+        '<span class="text-sm font-bold font-body">' + pedido.avatar + '</span>' +
+      '</div>' +
+      '<div>' +
+        '<p class="font-display font-bold text-marca-900">' + pedido.comprador + '</p>' +
+        '<p class="text-xs text-gray-400 font-body">' + pedido.id + '</p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="bg-gray-50 rounded-xl p-4 space-y-2">' +
+      '<div class="flex justify-between"><span class="text-xs text-gray-500 font-body">Produto</span><span class="text-sm font-semibold text-marca-900 font-body">' + pedido.produto + '</span></div>' +
+      '<div class="flex justify-between"><span class="text-xs text-gray-500 font-body">Data do pedido</span><span class="text-sm font-semibold text-marca-900 font-body">' + dataFormatada + '</span></div>' +
+      '<div class="flex justify-between"><span class="text-xs text-gray-500 font-body">Valor</span><span class="text-sm font-bold text-marca-900 font-display">R$ ' + pedido.valor.toFixed(2).replace('.', ',') + '</span></div>' +
+      '<div class="flex justify-between"><span class="text-xs text-gray-500 font-body">Status</span><span class="' + pedido.statusCor + ' text-xs font-semibold px-2 py-0.5 rounded-full font-body">' + pedido.statusLabel + '</span></div>' +
+    '</div>';
+  if (pedido.status === 'enviado') {
+    html += '<div class="bg-blue-50 border border-blue-200 rounded-xl p-4">' +
+      '<div class="flex items-center gap-2 mb-1">' +
+        '<svg class="w-4 h-4 text-marca-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>' +
+        '<p class="text-xs font-semibold text-marca-700 font-body">Código de rastreamento</p>' +
+      '</div>' +
+      '<p class="text-sm font-mono text-marca-900">BR' + Math.floor(Math.random()*9000000000+1000000000) + 'BR</p>' +
+    '</div>';
+  }
+  html += '<div class="flex gap-2">' +
+    (pedido.status === 'processando' ? '<button onclick="painel_do_anunciante_marcarEnviado(\'' + pedido.id + '\'); fecharModal();" class="flex-1 bg-marca-900 active:scale-95 text-white text-sm font-semibold py-3 rounded-xl transition-all font-body">Marcar como enviado</button>' : '') +
+    (pedido.status !== 'cancelado' && pedido.status !== 'entregue' ? '<button onclick="painel_do_anunciante_contatarComprador(\'' + pedido.comprador + '\'); fecharModal();" class="flex-1 bg-white border border-gray-200 active:scale-95 text-marca-900 text-sm font-semibold py-3 rounded-xl transition-all font-body">Contatar comprador</button>' : '') +
+  '</div></div>';
+  abrirModal(html, 'Pedido ' + pedido.id);
+}
+
+function painel_do_anunciante_marcarEnviado(id) {
+  toast('Pedido ' + id + ' marcado como enviado!', 'ok');
+}
+
+function painel_do_anunciante_contatarComprador(nome) {
+  toast('Conversa com ' + nome + ' iniciada', 'info');
+}
+
+function painel_do_anunciante_sacar() {
+  var html = '<div class="space-y-4">' +
+    '<div class="bg-marca-50 rounded-xl p-4 text-center">' +
+      '<p class="text-xs text-gray-500 font-body mb-1">Saldo disponível</p>' +
+      '<p class="text-2xl font-display font-bold text-marca-900">R$ 2.847,50</p>' +
+    '</div>' +
+    '<div>' +
+      '<label class="block text-xs font-semibold text-marca-900 mb-1.5 font-body">Valor do saque</label>' +
+      '<div class="relative">' +
+        '<span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm font-body">R$</span>' +
+        '<input type="text" value="2.847,50" id="painel-valor-saque" class="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl text-sm font-body text-marca-900 focus:border-marca-500 focus:ring-2 focus:ring-marca-100 outline-none transition-all" />' +
+      '</div>' +
+    '</div>' +
+    '<div>' +
+      '<label class="block text-xs font-semibold text-marca-900 mb-1.5 font-body">Conta bancária</label>' +
+      '<div class="bg-gray-50 rounded-xl p-3 flex items-center gap-3">' +
+        '<div class="w-10 h-10 bg-marca-100 rounded-lg flex items-center justify-center flex-shrink-0">' +
+          '<svg class="w-5 h-5 text-marca-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>' +
+        '</div>' +
+        '<div>' +
+          '<p class="text-sm font-semibold text-marca-900 font-body">Banco do Brasil</p>' +
+          '<p class="text-xs text-gray-400 font-body">Ag. 1234 · CC 56789-0</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<button onclick="painel_do_anunciante_confirmarSaque()" class="w-full bg-marca-900 hover:bg-marca-800 active:scale-95 text-white font-semibold py-3.5 rounded-xl transition-all font-body">Confirmar saque</button>' +
+  '</div>';
+  abrirModal(html, 'Solicitar Saque');
+}
+
+function painel_do_anunciante_confirmarSaque() {
+  fecharModal();
+  setTimeout(function() {
+    toast('Saque de R$ 2.847,50 solicitado! Chegará em 1 dia útil.', 'ok');
+  }, 300);
+}
+
+function painel_do_anunciante_init() {
+  painel_do_anunciante_renderizarPedidos();
+}
+
+window.painel_do_anunciante_init = painel_do_anunciante_init;
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', painel_do_anunciante_init);
+} else {
+  painel_do_anunciante_init();
+}
+})();
+</script>
+
     <!-- TELAS -->
       </main>
 
