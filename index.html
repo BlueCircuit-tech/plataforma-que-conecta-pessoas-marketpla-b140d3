@@ -860,6 +860,337 @@
     </style>
 </section>
 
+    <section data-tela="detalhe-do-anuncio" class="hidden">
+    <div class="px-4 pt-4 pb-28 animate-fade-in">
+        <!-- Carrossel de Imagens -->
+        <div id="detalhe-carrossel" class="relative rounded-2xl overflow-hidden bg-gray-100 aspect-square mb-5">
+            <div id="detalhe-carrossel-track" class="flex transition-transform duration-300 ease-out h-full" style="width:400%">
+                <div class="w-1/4 h-full flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                    <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span class="ml-3 text-gray-400 font-body text-sm">Foto principal do serviço</span>
+                </div>
+                <div class="w-1/4 h-full flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100">
+                    <svg class="w-16 h-16 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span class="ml-3 text-blue-400 font-body text-sm">Antes do serviço</span>
+                </div>
+                <div class="w-1/4 h-full flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-emerald-50 to-emerald-100">
+                    <svg class="w-16 h-16 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="ml-3 text-emerald-500 font-body text-sm">Serviço concluído</span>
+                </div>
+                <div class="w-1/4 h-full flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-amber-50 to-amber-100">
+                    <svg class="w-16 h-16 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                    <span class="ml-3 text-amber-500 font-body text-sm">Certificação do profissional</span>
+                </div>
+            </div>
+            <!-- Botões de navegação do carrossel -->
+            <button onclick="detalhe_do_anuncio_carrossel_prev()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow-md active:scale-90 transition-all hover:bg-white">
+                <svg class="w-5 h-5 text-marca-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button onclick="detalhe_do_anuncio_carrossel_next()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 backdrop-blur flex items-center justify-center shadow-md active:scale-90 transition-all hover:bg-white">
+                <svg class="w-5 h-5 text-marca-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <!-- Indicadores -->
+            <div id="detalhe-carrossel-indicadores" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <button class="w-2.5 h-2.5 rounded-full bg-white shadow transition-all" data-slide="0"></button>
+                <button class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all" data-slide="1"></button>
+                <button class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all" data-slide="2"></button>
+                <button class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all" data-slide="3"></button>
+            </div>
+            <!-- Badge de zoom -->
+            <div class="absolute top-4 right-4 bg-black/30 backdrop-blur rounded-full px-2.5 py-1 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                <span class="text-white text-xs font-body">Toque duplo para ampliar</span>
+            </div>
+        </div>
+
+        <!-- Título, Preço e Tags -->
+        <div class="mb-5">
+            <h1 class="font-display text-xl font-bold text-gray-900 leading-tight mb-2">Instalação de Ar-Condicionado Split Inverter 12000 BTUs — Profissional Certificado</h1>
+            <div class="flex items-baseline gap-3 mb-3">
+                <span class="font-display text-3xl font-bold text-marca-600">R$ 450,00</span>
+                <span class="text-gray-400 font-body text-sm line-through">R$ 580,00</span>
+                <span class="bg-green-100 text-green-700 text-xs font-body font-semibold px-2 py-0.5 rounded-full">-22%</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="badge bg-marca-50 text-marca-800">Instalação</span>
+                <span class="badge bg-blue-50 text-blue-700">Manutenção</span>
+                <span class="badge bg-green-50 text-green-700">Certificado ANATEL</span>
+                <span class="badge bg-amber-50 text-amber-700">Garantia 6 meses</span>
+                <span class="badge bg-gray-100 text-gray-600">Atendimento domiciliar</span>
+            </div>
+        </div>
+
+        <!-- Descrição -->
+        <div class="card p-4 mb-4">
+            <h2 class="font-display text-base font-semibold text-gray-800 mb-2">Sobre o serviço</h2>
+            <p class="font-body text-sm text-gray-600 leading-relaxed">Serviço completo de instalação de ar-condicionado split inverter. Inclui: instalação da unidade evaporadora e condensadora, passagem de tubulação de cobre e cabo elétrico, conexões elétricas e hidráulicas, teste de funcionamento e limpeza da área. O profissional possui certificação ANATEL e 8 anos de experiência. Garantia de 6 meses sobre o serviço executado. Atendo toda a região metropolitana de São Paulo. Orçamento sem compromisso.</p>
+        </div>
+
+        <!-- Card do Anunciante -->
+        <div class="card p-4 mb-4">
+            <h2 class="font-display text-base font-semibold text-gray-800 mb-3">Anunciante</h2>
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 rounded-full bg-marca-100 flex items-center justify-center flex-shrink-0">
+                    <span class="font-display text-xl font-bold text-marca-700">RC</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="font-display font-semibold text-gray-900 text-sm truncate">Roberto Cavalcanti</p>
+                    <div class="flex items-center gap-1 mt-0.5">
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <span class="font-body text-sm font-semibold text-gray-800">4,8</span>
+                        <span class="font-body text-xs text-gray-400">(127 avaliações)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mb-3">
+                <div class="bg-gray-50 rounded-xl p-3 text-center">
+                    <svg class="w-5 h-5 text-marca-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <p class="font-body text-xs text-gray-400">Responde em</p>
+                    <p class="font-display text-sm font-semibold text-gray-800">~45 min</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-3 text-center">
+                    <svg class="w-5 h-5 text-green-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <p class="font-body text-xs text-gray-400">Serviços feitos</p>
+                    <p class="font-display text-sm font-semibold text-gray-800">342</p>
+                </div>
+            </div>
+            <button onclick="mostrarTela('painel-do-anunciante')" class="w-full py-2.5 rounded-xl border-2 border-marca-600 text-marca-700 font-display font-semibold text-sm hover:bg-marca-50 active:scale-95 transition-all">Ver perfil completo</button>
+        </div>
+
+        <!-- Disponibilidade / Calendário -->
+        <div class="card p-4 mb-4">
+            <h2 class="font-display text-base font-semibold text-gray-800 mb-1">Disponibilidade</h2>
+            <p class="font-body text-xs text-gray-400 mb-3">Selecione um dia disponível para contratar</p>
+            <div class="flex items-center justify-between mb-3">
+                <button onclick="detalhe_do_anuncio_mes_anterior()" class="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center active:scale-90 transition-all">
+                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <span id="detalhe-mes-label" class="font-display font-semibold text-sm text-gray-800"></span>
+                <button onclick="detalhe_do_anuncio_mes_proximo()" class="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center active:scale-90 transition-all">
+                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+            <div class="grid grid-cols-7 gap-1 mb-1">
+                <span class="text-center text-xs font-body text-gray-400 py-1">Dom</span>
+                <span class="text-center text-xs font-body text-gray-400 py-1">Seg</span>
+                <span class="text-center text-xs font-body text-gray-400 py-1">Ter</span>
+                <span class="text-center text-xs font-body text-gray-400 py-1">Qua</span>
+                <span class="text-center text-xs font-body text-gray-400 py-1">Qui</span>
+                <span class="text-center text-xs font-body text-gray-400 py-1">Sex</span>
+                <span class="text-center text-xs font-body text-gray-400 py-1">Sáb</span>
+            </div>
+            <div id="detalhe-calendario" class="grid grid-cols-7 gap-1"></div>
+            <p id="detalhe-data-selecionada" class="font-body text-xs text-marca-600 mt-2 text-center hidden">Data selecionada: <span class="font-semibold"></span></p>
+        </div>
+
+        <!-- Avaliações -->
+        <div class="card p-4 mb-4">
+            <div class="flex items-center justify-between mb-3">
+                <h2 class="font-display text-base font-semibold text-gray-800">Avaliações</h2>
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <span class="font-display font-bold text-lg text-gray-900">4,8</span>
+                    <span class="font-body text-xs text-gray-400">(127)</span>
+                </div>
+            </div>
+            <div class="space-y-3" id="detalhe-avaliacoes">
+                <div class="border-b border-gray-100 pb-3 last:border-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center"><span class="font-display text-xs font-bold text-teal-700">AS</span></div>
+                        <div><p class="font-body text-sm font-semibold text-gray-800">Ana Souza</p><p class="font-body text-xs text-gray-400">há 3 dias</p></div>
+                    </div>
+                    <div class="flex gap-0.5 mb-1">★★★★★</div>
+                    <p class="font-body text-xs text-gray-600">Excelente profissional! Instalou meu ar condicionado rapidamente e deixou tudo limpo. Super recomendo.</p>
+                </div>
+                <div class="border-b border-gray-100 pb-3 last:border-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center"><span class="font-display text-xs font-bold text-purple-700">PL</span></div>
+                        <div><p class="font-body text-sm font-semibold text-gray-800">Paulo Lima</p><p class="font-body text-xs text-gray-400">há 1 semana</p></div>
+                    </div>
+                    <div class="flex gap-0.5 mb-1">★★★★<span class="text-gray-300">★</span></div>
+                    <p class="font-body text-xs text-gray-600">Ótimo trabalho, preço justo. Chegou no horário combinado. Recomendo!</p>
+                </div>
+                <div class="pb-1">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center"><span class="font-display text-xs font-bold text-orange-700">MC</span></div>
+                        <div><p class="font-body text-sm font-semibold text-gray-800">Marina Costa</p><p class="font-body text-xs text-gray-400">há 2 semanas</p></div>
+                    </div>
+                    <div class="flex gap-0.5 mb-1">★★★★★</div>
+                    <p class="font-body text-xs text-gray-600">Muito atencioso e cuidadoso com o ambiente. Me explicou tudo sobre o funcionamento do aparelho. Nota 10!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spacer para o botão fixo -->
+        <div class="h-4"></div>
+    </div>
+
+    <!-- Botões fixos inferiores -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t border-gray-100 p-4 z-50 max-w-[430px] mx-auto">
+        <div class="flex gap-3">
+            <button onclick="mostrarTela('meus-pedidos'); toast('Abrindo conversas', 'info')" class="flex-1 py-3.5 rounded-xl border-2 border-marca-600 text-marca-700 font-display font-semibold text-sm active:scale-95 transition-all hover:bg-marca-50 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-3.46-.44L3 20l1.44-3.96A9 9 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                Chat
+            </button>
+            <button onclick="detalhe_do_anuncio_contratar()" class="flex-[2] py-3.5 rounded-xl bg-marca-600 text-white font-display font-semibold text-sm active:scale-95 transition-all hover:bg-marca-700 shadow-lg shadow-marca-600/30 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+                Contratar agora
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de zoom de imagem -->
+    <div id="detalhe-modal-zoom" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-8" onclick="detalhe_do_anuncio_fechar_zoom()">
+        <button onclick="detalhe_do_anuncio_fechar_zoom()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="text-center">
+            <div class="w-72 h-72 rounded-2xl bg-gradient-to-br from-marca-100 to-marca-200 flex items-center justify-center mx-auto mb-4">
+                <span class="font-display text-marca-700 font-bold text-lg">Imagem Ampliada</span>
+            </div>
+            <p class="text-white/70 font-body text-sm">Toque para fechar</p>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var carrosselIdx = 0;
+        var totalSlides = 4;
+        var mesAtual = new Date().getMonth();
+        var anoAtual = new Date().getFullYear();
+        var dataSelecionada = null;
+        var lastTap = 0;
+
+        function init() {
+            renderCalendario();
+            setupCarrosselSwipe();
+            setupDoubleTapZoom();
+            updateIndicadores();
+        }
+
+        function renderCalendario() {
+            var primeiroDia = new Date(anoAtual, mesAtual, 1).getDay();
+            var diasNoMes = new Date(anoAtual, mesAtual + 1, 0).getDate();
+            var hoje = new Date();
+            hoje.setHours(0,0,0,0);
+            var meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+            document.getElementById('detalhe-mes-label').textContent = meses[mesAtual] + ' ' + anoAtual;
+            var html = '';
+            for (var i = 0; i < primeiroDia; i++) html += '<div class="py-2"></div>';
+            var diasDisponiveis = [3,4,5,8,9,10,11,15,16,17,22,23,24,29,30];
+            for (var d = 1; d <= diasNoMes; d++) {
+                var data = new Date(anoAtual, mesAtual, d);
+                var diaSem = data.getDay();
+                var passado = data < hoje;
+                var disponivel = diasDisponiveis.indexOf(d) >= 0;
+                var selecionado = dataSelecionada && dataSelecionada.getDate() === d && dataSelecionada.getMonth() === mesAtual && dataSelecionada.getFullYear() === anoAtual;
+                var cls = 'py-2 rounded-lg text-center font-body text-sm transition-all cursor-pointer ';
+                if (passado) cls += 'text-gray-300 cursor-default ';
+                else if (selecionado) cls += 'bg-marca-600 text-white font-semibold shadow-md shadow-marca-600/30 scale-105 ';
+                else if (disponivel) cls += 'bg-marca-50 text-marca-800 hover:bg-marca-100 font-medium active:scale-95 ';
+                else cls += 'text-gray-300 cursor-default ';
+                var clickAttr = disponivel && !passado ? 'onclick="detalhe_do_anuncio_selecionar_data(' + anoAtual + ',' + mesAtual + ',' + d + ')"' : '';
+                html += '<div class="' + cls + '" ' + clickAttr + '>' + d + '</div>';
+            }
+            document.getElementById('detalhe-calendario').innerHTML = html;
+        }
+
+        window.detalhe_do_anuncio_selecionar_data = function(y, m, d) {
+            dataSelecionada = new Date(y, m, d);
+            var diaSem = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'][dataSelecionada.getDay()];
+            var meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+            var label = diaSem + ', ' + dataSelecionada.getDate() + ' de ' + meses[dataSelecionada.getMonth()] + ' de ' + dataSelecionada.getFullYear();
+            var el = document.getElementById('detalhe-data-selecionada');
+            el.querySelector('span').textContent = label;
+            el.classList.remove('hidden');
+            renderCalendario();
+            toast('Data selecionada: ' + label, 'ok');
+        };
+
+        window.detalhe_do_anuncio_mes_anterior = function() {
+            mesAtual--;
+            if (mesAtual < 0) { mesAtual = 11; anoAtual--; }
+            dataSelecionada = null;
+            document.getElementById('detalhe-data-selecionada').classList.add('hidden');
+            renderCalendario();
+        };
+
+        window.detalhe_do_anuncio_mes_proximo = function() {
+            mesAtual++;
+            if (mesAtual > 11) { mesAtual = 0; anoAtual++; }
+            dataSelecionada = null;
+            document.getElementById('detalhe-data-selecionada').classList.add('hidden');
+            renderCalendario();
+        };
+
+        function updateIndicadores() {
+            var dots = document.querySelectorAll('#detalhe-carrossel-indicadores button');
+            dots.forEach(function(dot, i) {
+                dot.className = i === carrosselIdx ? 'w-2.5 h-2.5 rounded-full bg-white shadow transition-all' : 'w-2.5 h-2.5 rounded-full bg-white/40 transition-all';
+            });
+            document.getElementById('detalhe-carrossel-track').style.transform = 'translateX(-' + (carrosselIdx * 25) + '%)';
+        }
+
+        window.detalhe_do_anuncio_carrossel_next = function() {
+            carrosselIdx = (carrosselIdx + 1) % totalSlides;
+            updateIndicadores();
+        };
+
+        window.detalhe_do_anuncio_carrossel_prev = function() {
+            carrosselIdx = (carrosselIdx - 1 + totalSlides) % totalSlides;
+            updateIndicadores();
+        };
+
+        function setupCarrosselSwipe() {
+            var el = document.getElementById('detalhe-carrossel');
+            var startX = 0;
+            el.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+            el.addEventListener('touchend', function(e) {
+                var diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) { diff > 0 ? window.detalhe_do_anuncio_carrossel_next() : window.detalhe_do_anuncio_carrossel_prev(); }
+            }, { passive: true });
+        }
+
+        function setupDoubleTapZoom() {
+            var el = document.getElementById('detalhe-carrossel');
+            el.addEventListener('touchend', function(e) {
+                var now = Date.now();
+                if (now - lastTap < 300) { detalhe_do_anuncio_abrir_zoom(); }
+                lastTap = now;
+            });
+        }
+
+        window.detalhe_do_anuncio_abrir_zoom = function() {
+            var modal = document.getElementById('detalhe-modal-zoom');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.detalhe_do_anuncio_fechar_zoom = function() {
+            var modal = document.getElementById('detalhe-modal-zoom');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.detalhe_do_anuncio_contratar = function() {
+            if (!dataSelecionada) {
+                toast('Selecione uma data no calendário antes de contratar', 'erro');
+                document.querySelector('.card:nth-child(4)').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+            toast('Serviço adicionado ao carrinho!', 'ok');
+            setTimeout(function() { mostrarTela('meu-carrinho'); }, 600);
+        };
+
+        document.querySelectorAll('#detalhe-carrossel-indicadores button').forEach(function(btn, i) {
+            btn.addEventListener('click', function() { carrosselIdx = i; updateIndicadores(); });
+        });
+
+        init();
+    })();
+    </script>
+</section>
+
     <!-- TELAS -->
       </main>
 
