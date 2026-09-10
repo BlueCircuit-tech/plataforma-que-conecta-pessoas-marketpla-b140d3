@@ -1420,6 +1420,388 @@
       </script>
     </section>
 
+    <section data-tela="pagamento" class="hidden">
+      <div class="px-5 pt-6 pb-4">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <h1 class="font-display text-xl font-bold text-marca-900">Pagamento</h1>
+            <p class="text-sm text-gray-500 mt-0.5">Pedido #15237</p>
+          </div>
+          <button onclick="mostrarTela('meu-carrinho')" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center active:scale-90 transition-transform">
+            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Order Summary Card -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-4 mb-4 shadow-sm">
+          <div class="flex gap-3">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-marca-800 to-marca-600 flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-gray-800 truncate">Mesa de Escritório Executive</p>
+              <p class="text-xs text-gray-500 mt-0.5">Vendido por <span class="font-medium text-marca-700">MoveisPro</span></p>
+              <p class="text-xs text-gray-400">Qtd: 1</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-bold text-marca-900">R$ 2.490,00</p>
+              <p class="text-xs text-gray-400">Frete grátis</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 mt-3 pt-3 space-y-1.5">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>Subtotal</span><span class="text-gray-700">R$ 2.490,00</span>
+            </div>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>Frete</span><span class="text-green-600 font-medium">Grátis</span>
+            </div>
+            <div class="flex justify-between text-sm font-bold text-gray-900 pt-1.5 border-t border-gray-100">
+              <span>Total</span><span id="valor-total-display">R$ 2.490,00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Summary -->
+        <div class="bg-marca-50 rounded-2xl border border-marca-100 p-4 mb-4 flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-marca-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-marca-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243A8 8 0 1117.657 16.657z"/><circle cx="12" cy="11" r="1.5" fill="currentColor"/></svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-xs font-semibold text-marca-800">Entrega</p>
+            <p class="text-xs text-gray-600 mt-0.5">Av. Paulista, 1578, Apto 42</p>
+            <p class="text-xs text-gray-500">Bela Vista, São Paulo - SP</p>
+            <p class="text-xs text-gray-500">CEP: 01310-200</p>
+          </div>
+          <button onclick="mostrarTela('meu-carrinho')" class="text-xs text-marca-600 font-medium hover:underline flex-shrink-0">Alterar</button>
+        </div>
+
+        <!-- Payment Method Selector -->
+        <p class="text-sm font-semibold text-gray-800 mb-2">Forma de pagamento</p>
+        <div class="grid grid-cols-2 gap-2 mb-4">
+          <button onclick="pagamento_selecionarMetodo('pix')" id="btn-metodo-pix" class="payment-method-btn bg-white border-2 border-marca-600 rounded-xl p-3 flex flex-col items-center gap-1.5 transition-all active:scale-95">
+            <svg class="w-7 h-7 text-marca-700" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 10.65c.17.38.17.82 0 1.2-.17.38-.48.65-.85.73l-5.1 1.27-2.3 5.18c-.17.38-.53.65-.93.65h-.08c-.4 0-.76-.27-.93-.65l-2.3-5.18-5.1-1.27c-.37-.08-.68-.35-.85-.73-.17-.38-.17-.82 0-1.2.17-.38.48-.65.85-.73l5.1-1.27 2.3-5.18c.17-.38.53-.65.93-.65h.08c.4 0 .76.27.93.65l2.3 5.18 5.1 1.27c.37.08.68.35.85.73zM12 6.5l-2.5 5.6h5L12 6.5z"/></svg>
+            <span class="text-xs font-bold text-marca-800">Pix</span>
+            <span class="text-[10px] text-green-600 font-medium">Aprovação instantânea</span>
+          </button>
+          <button onclick="pagamento_selecionarMetodo('cartao')" id="btn-metodo-cartao" class="payment-method-btn bg-white border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center gap-1.5 transition-all active:scale-95">
+            <svg class="w-7 h-7 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span class="text-xs font-bold text-gray-600">Cartão de Crédito</span>
+            <span class="text-[10px] text-gray-400 font-medium">Até 12x sem juros</span>
+          </button>
+        </div>
+
+        <!-- Pix Payment Section -->
+        <div id="secao-pix" class="bg-white rounded-2xl border border-gray-200 p-5 mb-4 shadow-sm">
+          <div class="text-center">
+            <p class="text-sm font-semibold text-gray-800 mb-1">Escaneie o QR Code</p>
+            <p class="text-xs text-gray-500 mb-4">Abra o app do seu banco e escaneie</p>
+            <div class="inline-block bg-white border-2 border-gray-100 rounded-2xl p-3 mb-4 shadow-inner">
+              <svg id="qr-code" viewBox="0 0 150 150" class="w-40 h-40">
+                <!-- Simulated QR Code pattern -->
+                <rect width="150" height="150" fill="white"/>
+                <g fill="#1E3A5F">
+                  <rect x="5" y="5" width="35" height="35" rx="3"/>
+                  <rect x="10" y="10" width="25" height="25" rx="2" fill="white"/>
+                  <rect x="14" y="14" width="17" height="17" rx="1"/>
+                  <rect x="110" y="5" width="35" height="35" rx="3"/>
+                  <rect x="115" y="10" width="25" height="25" rx="2" fill="white"/>
+                  <rect x="119" y="14" width="17" height="17" rx="1"/>
+                  <rect x="5" y="110" width="35" height="35" rx="3"/>
+                  <rect x="10" y="115" width="25" height="25" rx="2" fill="white"/>
+                  <rect x="14" y="119" width="17" height="17" rx="1"/>
+                  <rect x="48" y="5" width="6" height="6"/><rect x="60" y="5" width="6" height="6"/><rect x="72" y="5" width="6" height="6"/><rect x="84" y="5" width="6" height="6"/><rect x="48" y="17" width="6" height="6"/><rect x="72" y="17" width="6" height="6"/><rect x="48" y="29" width="6" height="6"/><rect x="60" y="29" width="6" height="6"/><rect x="84" y="29" width="6" height="6"/>
+                  <rect x="5" y="48" width="6" height="6"/><rect x="17" y="48" width="6" height="6"/><rect x="29" y="48" width="6" height="6"/><rect x="5" y="60" width="6" height="6"/><rect x="29" y="60" width="6" height="6"/><rect x="5" y="72" width="6" height="6"/><rect x="17" y="72" width="6" height="6"/><rect x="48" y="48" width="6" height="6"/><rect x="60" y="48" width="6" height="6"/><rect x="72" y="48" width="6" height="6"/><rect x="84" y="48" width="6" height="6"/><rect x="48" y="60" width="6" height="6"/><rect x="72" y="60" width="6" height="6"/><rect x="84" y="72" width="6" height="6"/><rect x="48" y="72" width="6" height="6"/><rect x="60" y="72" width="6" height="6"/><rect x="48" y="84" width="6" height="6"/><rect x="72" y="84" width="6" height="6"/><rect x="96" y="48" width="6" height="6"/><rect x="108" y="48" width="6" height="6"/><rect x="120" y="48" width="6" height="6"/><rect x="132" y="48" width="6" height="6"/><rect x="96" y="60" width="6" height="6"/><rect x="114" y="60" width="6" height="6"/><rect x="132" y="60" width="6" height="6"/><rect x="96" y="72" width="6" height="6"/><rect x="108" y="72" width="6" height="6"/><rect x="120" y="72" width="6" height="6"/><rect x="96" y="84" width="6" height="6"/><rect x="120" y="84" width="6" height="6"/>
+                  <rect x="5" y="96" width="6" height="6"/><rect x="17" y="96" width="6" height="6"/><rect x="29" y="96" width="6" height="6"/><rect x="5" y="108" width="6" height="6"/><rect x="17" y="108" width="6" height="6"/><rect x="29" y="108" width="6" height="6"/><rect x="5" y="120" width="6" height="6"/><rect x="17" y="120" width="6" height="6"/><rect x="29" y="132" width="6" height="6"/>
+                  <rect x="48" y="96" width="6" height="6"/><rect x="60" y="96" width="6" height="6"/><rect x="72" y="96" width="6" height="6"/><rect x="48" y="108" width="6" height="6"/><rect x="84" y="108" width="6" height="6"/><rect x="48" y="120" width="6" height="6"/><rect x="72" y="120" width="6" height="6"/><rect x="60" y="132" width="6" height="6"/><rect x="84" y="132" width="6" height="6"/>
+                  <rect x="96" y="96" width="6" height="6"/><rect x="108" y="96" width="6" height="6"/><rect x="120" y="96" width="6" height="6"/><rect x="132" y="96" width="6" height="6"/><rect x="96" y="108" width="6" height="6"/><rect x="114" y="108" width="6" height="6"/><rect x="132" y="108" width="6" height="6"/><rect x="96" y="120" width="6" height="6"/><rect x="108" y="132" width="6" height="6"/><rect x="120" y="120" width="6" height="6"/><rect x="132" y="132" width="6" height="6"/>
+                  <rect x="110" y="110" width="6" height="6"/><rect x="122" y="110" width="6" height="6"/><rect x="134" y="110" width="6" height="6"/><rect x="110" y="122" width="6" height="6"/><rect x="110" y="134" width="6" height="6"/>
+                </g>
+              </svg>
+            </div>
+            <p class="text-lg font-bold text-marca-900 mb-0.5">R$ 2.490,00</p>
+            <p class="text-xs text-gray-500 mb-3">Expira em <span id="pix-timer" class="font-mono font-bold text-marca-700">14:59</span></p>
+            <button onclick="pagamento_copiarPix()" class="bg-marca-700 text-white text-sm font-semibold py-3 px-6 rounded-xl active:scale-95 transition-all w-full max-w-[220px] mx-auto flex items-center justify-center gap-2 hover:bg-marca-800">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/><path d="M5 15H3a2 2 0 01-2-2V3a2 2 0 012-2h10a2 2 0 012 2v2" stroke-width="2" stroke-linecap="round"/></svg>
+              Copiar código Pix
+            </button>
+          </div>
+        </div>
+
+        <!-- Credit Card Payment Section -->
+        <div id="secao-cartao" class="hidden bg-white rounded-2xl border border-gray-200 p-5 mb-4 shadow-sm">
+          <!-- Card brand detected indicator -->
+          <div id="card-brands" class="flex gap-2 mb-4">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' viewBox='0 0 40 25'%3E%3Crect width='40' height='25' rx='4' fill='%231A1F71'/%3E%3Ctext x='20' y='16' text-anchor='middle' fill='white' font-size='8' font-weight='bold'%3EVISA%3C/text%3E%3C/svg%3E" alt="Visa" class="h-7 w-auto opacity-40 transition-opacity" id="brand-visa"/>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' viewBox='0 0 40 25'%3E%3Crect width='40' height='25' rx='4' fill='%23EB001B'/%3E%3Ccircle cx='15' cy='12.5' r='8' fill='%23EB001B' opacity='0.8'/%3E%3Ccircle cx='25' cy='12.5' r='8' fill='%23F79E1B' opacity='0.8'/%3E%3C/svg%3E" alt="Mastercard" class="h-7 w-auto opacity-40 transition-opacity" id="brand-mastercard"/>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' viewBox='0 0 40 25'%3E%3Crect width='40' height='25' rx='4' fill='%230066AA'/%3E%3Ctext x='20' y='16' text-anchor='middle' fill='white' font-size='7' font-weight='bold'%3EELO%3C/text%3E%3C/svg%3E" alt="Elo" class="h-7 w-auto opacity-40 transition-opacity" id="brand-elo"/>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' viewBox='0 0 40 25'%3E%3Crect width='40' height='25' rx='4' fill='%230037A5'/%3E%3Ctext x='20' y='16' text-anchor='middle' fill='white' font-size='6' font-weight='bold'%3EHIPERCARD%3C/text%3E%3C/svg%3E" alt="Hipercard" class="h-7 w-auto opacity-40 transition-opacity" id="brand-hipercard"/>
+            <div id="brand-unknown" class="hidden h-7 w-10 rounded border border-dashed border-gray-300 flex items-center justify-center">
+              <span class="text-[9px] text-gray-400">?</span>
+            </div>
+          </div>
+
+          <!-- Card Number -->
+          <div class="mb-3">
+            <label class="block text-xs font-medium text-gray-600 mb-1">Número do cartão</label>
+            <div class="relative">
+              <input type="text" id="input-numero-cartao" maxlength="19" placeholder="0000 0000 0000 0000" oninput="pagamento_detectarBandeira(); pagamento_validarCartao()" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-marca-400 focus:ring-2 focus:ring-marca-100 transition-all font-mono" />
+            </div>
+          </div>
+
+          <!-- Cardholder Name -->
+          <div class="mb-3">
+            <label class="block text-xs font-medium text-gray-600 mb-1">Nome do titular</label>
+            <input type="text" id="input-nome-titular" placeholder="Como no cartão" oninput="pagamento_validarCartao()" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-marca-400 focus:ring-2 focus:ring-marca-100 transition-all uppercase" />
+          </div>
+
+          <!-- Expiry + CVV row -->
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div>
+              <label class="block text-xs font-medium text-gray-600 mb-1">Validade</label>
+              <input type="text" id="input-validade" maxlength="5" placeholder="MM/AA" oninput="pagamento_mascaraValidade(); pagamento_validarCartao()" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-marca-400 focus:ring-2 focus:ring-marca-100 transition-all font-mono" />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-600 mb-1">CVV</label>
+              <input type="text" id="input-cvv" maxlength="4" placeholder="000" oninput="pagamento_validarCartao()" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-marca-400 focus:ring-2 focus:ring-marca-100 transition-all font-mono" />
+            </div>
+          </div>
+
+          <!-- Installment selector -->
+          <div class="mb-3">
+            <label class="block text-xs font-medium text-gray-600 mb-1">Parcelamento</label>
+            <div class="relative">
+              <select id="select-parcelas" onchange="pagamento_atualizarParcelas()" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-marca-400 focus:ring-2 focus:ring-marca-100 transition-all appearance-none">
+              </select>
+              <svg class="w-4 h-4 text-gray-400 absolute right-3 top-3.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Badges -->
+        <div class="bg-marca-50 rounded-xl border border-marca-100 p-3 mb-4 flex items-center justify-center gap-4">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-marca-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <span class="text-[10px] font-semibold text-marca-700">PCI DSS</span>
+          </div>
+          <div class="w-px h-3 bg-marca-200"></div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-marca-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2"/><path d="M7 11V7a5 5 0 0110 0v4" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="text-[10px] font-semibold text-marca-700">Dados criptografados</span>
+          </div>
+        </div>
+
+        <!-- Pay Button -->
+        <button id="btn-pagar" onclick="pagamento_processar()" class="w-full bg-marca-700 text-white font-bold text-base py-4 rounded-2xl active:scale-[0.98] transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:bg-marca-800 shadow-lg shadow-marca-700/20" disabled>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2"/><path d="M7 11V7a5 5 0 0110 0v4" stroke-width="2" stroke-linecap="round"/></svg>
+          <span id="texto-botao-pagar">Pagar R$ 2.490,00</span>
+        </button>
+
+        <!-- Terms -->
+        <p class="text-center text-[10px] text-gray-400 mt-3 leading-relaxed">
+          Ao clicar em pagar, você concorda com nossos <span class="text-marca-600 underline">Termos de Uso</span> e <span class="text-marca-600 underline">Política de Privacidade</span>.
+        </p>
+      </div>
+
+      <script>
+      (function() {
+        const VALOR_TOTAL = 2490.00;
+        let metodoSelecionado = 'pix';
+        let pixTimerInterval = null;
+        let pixSegundos = 899;
+
+        function formatarNumeroCartao(val) {
+          const digits = val.replace(/\D/g, '').slice(0, 16);
+          return digits.replace(/(\d{4})(?=\d)/g, '$1 ');
+        }
+
+        function mascaraValidade(val) {
+          const digits = val.replace(/\D/g, '').slice(0, 4);
+          if (digits.length >= 3) return digits.slice(0, 2) + '/' + digits.slice(2);
+          return digits;
+        }
+
+        window.pagamento_selecionarMetodo = function(metodo) {
+          metodoSelecionado = metodo;
+          const btnPix = document.getElementById('btn-metodo-pix');
+          const btnCartao = document.getElementById('btn-metodo-cartao');
+          const secaoPix = document.getElementById('secao-pix');
+          const secaoCartao = document.getElementById('secao-cartao');
+
+          if (metodo === 'pix') {
+            btnPix.classList.remove('border-gray-200');
+            btnPix.classList.add('border-marca-600');
+            btnPix.querySelector('svg').classList.remove('text-gray-500');
+            btnPix.querySelector('svg').classList.add('text-marca-700');
+            btnPix.querySelectorAll('span')[0].classList.remove('text-gray-600');
+            btnPix.querySelectorAll('span')[0].classList.add('text-marca-800');
+            btnCartao.classList.remove('border-marca-600');
+            btnCartao.classList.add('border-gray-200');
+            btnCartao.querySelector('svg').classList.remove('text-marca-700');
+            btnCartao.querySelector('svg').classList.add('text-gray-500');
+            btnCartao.querySelectorAll('span')[0].classList.remove('text-marca-800');
+            btnCartao.querySelectorAll('span')[0].classList.add('text-gray-600');
+            secaoPix.classList.remove('hidden');
+            secaoCartao.classList.add('hidden');
+            iniciarTimerPix();
+          } else {
+            btnCartao.classList.remove('border-gray-200');
+            btnCartao.classList.add('border-marca-600');
+            btnCartao.querySelector('svg').classList.remove('text-gray-500');
+            btnCartao.querySelector('svg').classList.add('text-marca-700');
+            btnCartao.querySelectorAll('span')[0].classList.remove('text-gray-600');
+            btnCartao.querySelectorAll('span')[0].classList.add('text-marca-800');
+            btnPix.classList.remove('border-marca-600');
+            btnPix.classList.add('border-gray-200');
+            btnPix.querySelector('svg').classList.remove('text-marca-700');
+            btnPix.querySelector('svg').classList.add('text-gray-500');
+            btnPix.querySelectorAll('span')[0].classList.remove('text-marca-800');
+            btnPix.querySelectorAll('span')[0].classList.add('text-gray-600');
+            secaoPix.classList.add('hidden');
+            secaoCartao.classList.remove('hidden');
+            pararTimerPix();
+          }
+          window.pagamento_validarCartao();
+        };
+
+        function iniciarTimerPix() {
+          pararTimerPix();
+          pixSegundos = 899;
+          atualizarTimerPix();
+          pixTimerInterval = setInterval(function() {
+            pixSegundos--;
+            if (pixSegundos <= 0) {
+              pixSegundos = 899;
+            }
+            atualizarTimerPix();
+          }, 1000);
+        }
+
+        function pararTimerPix() {
+          if (pixTimerInterval) {
+            clearInterval(pixTimerInterval);
+            pixTimerInterval = null;
+          }
+        }
+
+        function atualizarTimerPix() {
+          const min = Math.floor(pixSegundos / 60).toString().padStart(2, '0');
+          const seg = (pixSegundos % 60).toString().padStart(2, '0');
+          const el = document.getElementById('pix-timer');
+          if (el) el.textContent = min + ':' + seg;
+        }
+
+        window.pagamento_copiarPix = function() {
+          const codigoPix = '00020126580014BR.GOV.BCB.PIX0136364e3c2a-8b4f-4a1d-9f7e-2c8b5a1d3f4e5204000053039865802BR5925BlueCircuit Tecnologia LTDA6009Sao Paulo62070503***63041D3D';
+          navigator.clipboard.writeText(codigoPix).then(function() {
+            toast('Código Pix copiado!', 'ok');
+          }).catch(function() {
+            toast('Código Pix copiado!', 'ok');
+          });
+        };
+
+        window.pagamento_detectarBandeira = function() {
+          const numero = document.getElementById('input-numero-cartao').value.replace(/\s/g, '');
+          const brands = ['visa', 'mastercard', 'elo', 'hipercard'];
+          brands.forEach(function(b) { document.getElementById('brand-' + b).style.opacity = '0.4'; });
+          document.getElementById('brand-unknown').classList.add('hidden');
+
+          if (numero.length >= 1) {
+            if (/^4/.test(numero)) {
+              document.getElementById('brand-visa').style.opacity = '1';
+            } else if (/^(5[1-5]|2[2-7])/.test(numero)) {
+              document.getElementById('brand-mastercard').style.opacity = '1';
+            } else if (/^(636368|636297|504175|438935|451416|636369)/.test(numero)) {
+              document.getElementById('brand-elo').style.opacity = '1';
+            } else if (/^(384|38)/.test(numero)) {
+              document.getElementById('brand-hipercard').style.opacity = '1';
+            } else if (numero.length >= 2) {
+              document.getElementById('brand-unknown').classList.remove('hidden');
+            }
+          }
+        };
+
+        window.pagamento_mascaraValidade = function() {
+          const el = document.getElementById('input-validade');
+          el.value = mascaraValidade(el.value);
+        };
+
+        function isCartaoValido() {
+          const numero = document.getElementById('input-numero-cartao').value.replace(/\s/g, '');
+          const nome = document.getElementById('input-nome-titular').value.trim();
+          const validade = document.getElementById('input-validade').value;
+          const cvv = document.getElementById('input-cvv').value;
+          if (numero.length < 15) return false;
+          if (nome.length < 3) return false;
+          if (!/^\d{2}\/\d{2}$/.test(validade)) return false;
+          if (cvv.length < 3) return false;
+          return true;
+        }
+
+        function isPixValido() {
+          return true;
+        }
+
+        window.pagamento_validarCartao = function() {
+          const btnPagar = document.getElementById('btn-pagar');
+          const valido = metodoSelecionado === 'pix' ? isPixValido() : isCartaoValido();
+          btnPagar.disabled = !valido;
+          const span = document.getElementById('texto-botao-pagar');
+          if (metodoSelecionado === 'cartao' && valido) {
+            const select = document.getElementById('select-parcelas');
+            const parcela = select.options[select.selectedIndex];
+            if (parcela) {
+              span.textContent = 'Pagar ' + parcela.text;
+            }
+          } else {
+            span.textContent = 'Pagar R$ ' + VALOR_TOTAL.toFixed(2).replace('.', ',');
+          }
+        };
+
+        window.pagamento_atualizarParcelas = function() {
+          const select = document.getElementById('select-parcelas');
+          const parcela = select.options[select.selectedIndex];
+          const span = document.getElementById('texto-botao-pagar');
+          if (parcela && metodoSelecionado === 'cartao') {
+            span.textContent = 'Pagar ' + parcela.text;
+          }
+        };
+
+        window.pagamento_processar = function() {
+          const btnPagar = document.getElementById('btn-pagar');
+          btnPagar.disabled = true;
+          btnPagar.innerHTML = '<svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> Processando...';
+          setTimeout(function() {
+            toast('Pagamento aprovado! Redirecionando...', 'ok');
+            setTimeout(function() {
+              mostrarTela('pedido-confirmado');
+            }, 1200);
+          }, 2000);
+        };
+
+        // Populate installment options
+        const selectParcelas = document.getElementById('select-parcelas');
+        const parcelasData = [
+          {n: 1, juros: false}, {n: 2, juros: false}, {n: 3, juros: false},
+          {n: 4, juros: false}, {n: 5, juros: false}, {n: 6, juros: false},
+          {n: 7, juros: false}, {n: 8, juros: false}, {n: 9, juros: false},
+          {n: 10, juros: false}, {n: 11, juros: false}, {n: 12, juros: false}
+        ];
+        parcelasData.forEach(function(p) {
+          const opt = document.createElement('option');
+          opt.value = p.n;
+          const valorParcela = VALOR_TOTAL / p.n;
+          opt.textContent = p.n + 'x de R$ ' + valorParcela.toFixed(2).replace('.', ',') + (p.juros ? ' com juros' : ' sem juros');
+          selectParcelas.appendChild(opt);
+        });
+
+        // Init
+        iniciarTimerPix();
+        window.pagamento_validarCartao();
+      })();
+      </script>
+    </section>
+
     <!-- TELAS -->
       </main>
 
