@@ -1191,6 +1191,235 @@
     </script>
 </section>
 
+    <section data-tela="meu-carrinho" class="hidden">
+      <div class="px-5 pt-4 pb-2">
+        <h1 class="font-display text-xl font-bold text-marca-900">Meu Carrinho</h1>
+        <p class="text-sm text-gray-500 mt-0.5">3 itens no carrinho</p>
+      </div>
+      <div class="px-5 space-y-3 overflow-y-auto" style="max-height: calc(100vh - 290px);" id="lista-carrinho">
+        <div class="item-carrinho card p-3" data-index="0">
+          <div class="flex gap-3">
+            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center flex-shrink-0">
+              <span class="text-xs font-bold text-marca-800">CAPA</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-display font-semibold text-sm text-marca-900 truncate">Capa de Silicone iPhone 15 Pro</h3>
+              <p class="text-xs text-gray-400 mt-0.5">por TechCase BR</p>
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button onclick="meu_carrinho_alterarQtd(0, -1)" class="qtd-btn px-2.5 py-1 text-marca-700 hover:bg-marca-50 active:bg-marca-100 transition-colors text-sm font-bold">&minus;</button>
+                  <span class="qtd-valor px-3 py-1 text-sm font-semibold text-marca-900 border-x border-gray-200 bg-white min-w-[2.2rem] text-center" id="qtd-0">1</span>
+                  <button onclick="meu_carrinho_alterarQtd(0, 1)" class="qtd-btn px-2.5 py-1 text-marca-700 hover:bg-marca-50 active:bg-marca-100 transition-colors text-sm font-bold">+</button>
+                </div>
+                <span class="text-sm font-bold text-marca-900 subtotal-item" id="subtotal-0">R$ 79,90</span>
+              </div>
+            </div>
+            <button onclick="meu_carrinho_remover(0)" class="text-gray-300 hover:text-red-500 transition-colors p-1 self-start mt-0.5" title="Remover item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="item-carrinho card p-3" data-index="1">
+          <div class="flex gap-3">
+            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center flex-shrink-0">
+              <span class="text-xs font-bold text-marca-800">TÊNIS</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-display font-semibold text-sm text-marca-900 truncate">Tênis Nike Air Max 270 Masculino</h3>
+              <p class="text-xs text-gray-400 mt-0.5">por SportStore RJ</p>
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button onclick="meu_carrinho_alterarQtd(1, -1)" class="qtd-btn px-2.5 py-1 text-marca-700 hover:bg-marca-50 active:bg-marca-100 transition-colors text-sm font-bold">&minus;</button>
+                  <span class="qtd-valor px-3 py-1 text-sm font-semibold text-marca-900 border-x border-gray-200 bg-white min-w-[2.2rem] text-center" id="qtd-1">1</span>
+                  <button onclick="meu_carrinho_alterarQtd(1, 1)" class="qtd-btn px-2.5 py-1 text-marca-700 hover:bg-marca-50 active:bg-marca-100 transition-colors text-sm font-bold">+</button>
+                </div>
+                <span class="text-sm font-bold text-marca-900 subtotal-item" id="subtotal-1">R$ 599,90</span>
+              </div>
+            </div>
+            <button onclick="meu_carrinho_remover(1)" class="text-gray-300 hover:text-red-500 transition-colors p-1 self-start mt-0.5" title="Remover item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="item-carrinho card p-3" data-index="2">
+          <div class="flex gap-3">
+            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center flex-shrink-0">
+              <span class="text-xs font-bold text-marca-800">FONE</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-display font-semibold text-sm text-marca-900 truncate">Fone de Ouvido Bluetooth Sony WH-CH720N</h3>
+              <p class="text-xs text-gray-400 mt-0.5">por EletroShop SP</p>
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button onclick="meu_carrinho_alterarQtd(2, -1)" class="qtd-btn px-2.5 py-1 text-marca-700 hover:bg-marca-50 active:bg-marca-100 transition-colors text-sm font-bold">&minus;</button>
+                  <span class="qtd-valor px-3 py-1 text-sm font-semibold text-marca-900 border-x border-gray-200 bg-white min-w-[2.2rem] text-center" id="qtd-2">2</span>
+                  <button onclick="meu_carrinho_alterarQtd(2, 1)" class="qtd-btn px-2.5 py-1 text-marca-700 hover:bg-marca-50 active:bg-marca-100 transition-colors text-sm font-bold">+</button>
+                </div>
+                <span class="text-sm font-bold text-marca-900 subtotal-item" id="subtotal-2">R$ 459,80</span>
+              </div>
+            </div>
+            <button onclick="meu_carrinho_remover(2)" class="text-gray-300 hover:text-red-500 transition-colors p-1 self-start mt-0.5" title="Remover item">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 mt-4">
+        <div class="card p-4 space-y-3">
+          <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Cupom de Desconto</label>
+          <div class="flex gap-2">
+            <input type="text" id="input-cupom" placeholder="Digite o código do cupom" class="flex-1 border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-marca-900 placeholder:text-gray-300 focus:outline-none focus:border-marca-400 focus:ring-1 focus:ring-marca-400 transition-all font-body">
+            <button onclick="meu_carrinho_aplicarCupom()" class="btn-primary px-4 py-2.5 rounded-lg text-sm font-semibold active:scale-95 transition-all bg-marca-700 text-white hover:bg-marca-800">Aplicar</button>
+          </div>
+          <div id="cupom-feedback" class="hidden text-xs font-medium"></div>
+        </div>
+      </div>
+      <div class="px-5 mt-4">
+        <div class="card p-4">
+          <h2 class="font-display font-bold text-sm text-marca-900 mb-3">Resumo do Pedido</h2>
+          <div class="space-y-2">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-500">Subtotal</span>
+              <span class="font-semibold text-marca-900" id="resumo-subtotal">R$ 1.139,60</span>
+            </div>
+            <div class="flex justify-between text-sm hidden" id="linha-desconto">
+              <span class="text-emerald-600">Desconto (<span id="desconto-percent">10%</span>)</span>
+              <span class="font-semibold text-emerald-600" id="resumo-desconto">- R$ 113,96</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-500">Taxa de entrega</span>
+              <span class="font-semibold text-marca-900" id="resumo-entrega">R$ 15,90</span>
+            </div>
+            <div class="border-t border-gray-100 pt-2 mt-2">
+              <div class="flex justify-between items-baseline">
+                <span class="font-display font-bold text-sm text-marca-900">Total</span>
+                <span class="font-display font-bold text-lg text-marca-700" id="resumo-total">R$ 1.155,50</span>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-1">ou em até <span class="font-semibold text-marca-700">12x de R$ 96,29</span> sem juros</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-28"></div>
+      <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-gray-100 px-5 pt-3 pb-5 z-20" style="max-width: 430px; margin: 0 auto;">
+        <button onclick="meu_carrinho_irPagamento()" class="w-full btn-primary py-3.5 rounded-xl text-base font-bold active:scale-[0.97] transition-all bg-marca-700 text-white hover:bg-marca-800 shadow-lg shadow-marca-700/20 flex items-center justify-center gap-2">
+          Continuar para Pagamento
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div class="flex items-center justify-center gap-1.5 mt-2.5">
+          <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="text-[11px] text-gray-400">Compra protegida — seus dados estão seguros</span>
+        </div>
+      </div>
+      <script>
+        const meu_carrinho_itens = [
+          { titulo: 'Capa de Silicone iPhone 15 Pro', preco: 79.90, qtd: 1, vendedor: 'TechCase BR' },
+          { titulo: 'Tênis Nike Air Max 270 Masculino', preco: 599.90, qtd: 1, vendedor: 'SportStore RJ' },
+          { titulo: 'Fone de Ouvido Bluetooth Sony WH-CH720N', preco: 229.90, qtd: 2, vendedor: 'EletroShop SP' }
+        ];
+        let meu_carrinho_desconto = 0;
+        let meu_carrinho_cupomAplicado = '';
+
+        function meu_carrinho_alterarQtd(index, delta) {
+          const item = meu_carrinho_itens[index];
+          const novaQtd = item.qtd + delta;
+          if (novaQtd < 1) {
+            meu_carrinho_remover(index);
+            return;
+          }
+          item.qtd = novaQtd;
+          const elQtd = document.getElementById('qtd-' + index);
+          const elSub = document.getElementById('subtotal-' + index);
+          if (elQtd) elQtd.textContent = novaQtd;
+          if (elSub) elSub.textContent = 'R$ ' + (item.preco * novaQtd).toFixed(2).replace('.', ',');
+          meu_carrinho_atualizarResumo();
+        }
+
+        function meu_carrinho_remover(index) {
+          const nome = meu_carrinho_itens[index].titulo;
+          meu_carrinho_itens.splice(index, 1);
+          const elItem = document.querySelector('.item-carrinho[data-index="' + index + '"]');
+          if (elItem) {
+            elItem.style.transition = 'all 0.3s ease';
+            elItem.style.opacity = '0';
+            elItem.style.transform = 'translateX(100%)';
+            elItem.style.maxHeight = elItem.offsetHeight + 'px';
+            requestAnimationFrame(() => {
+              elItem.style.maxHeight = '0';
+              elItem.style.padding = '0';
+              elItem.style.margin = '0';
+              elItem.style.borderWidth = '0';
+            });
+            setTimeout(() => elItem.remove(), 350);
+          }
+          setTimeout(() => {
+            meu_carrinho_reindexar();
+            meu_carrinho_atualizarResumo();
+            const totalItens = meu_carrinho_itens.reduce((s, i) => s + i.qtd, 0);
+            document.querySelector('[data-tela="meu-carrinho"] p').textContent = totalItens === 1 ? '1 item no carrinho' : totalItens + ' itens no carrinho';
+            if (meu_carrinho_itens.length === 0) {
+              document.getElementById('lista-carrinho').innerHTML = meu_carrinho_htmlVazio();
+            }
+          }, 380);
+          toast('"' + nome.substring(0, 30) + '" removido do carrinho', 'info');
+        }
+
+        function meu_carrinho_reindexar() {
+          document.querySelectorAll('.item-carrinho').forEach((el, i) => el.setAttribute('data-index', i));
+        }
+
+        function meu_carrinho_atualizarResumo() {
+          let subtotal = meu_carrinho_itens.reduce((s, i) => s + i.preco * i.qtd, 0);
+          const desconto = meu_carrinho_desconto;
+          const entrega = meu_carrinho_itens.length > 0 ? 15.90 : 0;
+          const total = Math.max(0, subtotal - desconto + entrega);
+          document.getElementById('resumo-subtotal').textContent = 'R$ ' + subtotal.toFixed(2).replace('.', ',');
+          const linhaDesc = document.getElementById('linha-desconto');
+          if (desconto > 0) {
+            linhaDesc.classList.remove('hidden');
+            document.getElementById('resumo-desconto').textContent = '- R$ ' + desconto.toFixed(2).replace('.', ',');
+          } else {
+            linhaDesc.classList.add('hidden');
+          }
+          document.getElementById('resumo-entrega').textContent = entrega > 0 ? 'R$ ' + entrega.toFixed(2).replace('.', ',') : 'Grátis';
+          document.getElementById('resumo-total').textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+        }
+
+        function meu_carrinho_aplicarCupom() {
+          const input = document.getElementById('input-cupom');
+          const feedback = document.getElementById('cupom-feedback');
+          const codigo = input.value.trim().toUpperCase();
+          if (!codigo) { feedback.textContent = 'Digite um código de cupom.'; feedback.className = 'text-xs font-medium text-red-500'; feedback.classList.remove('hidden'); return; }
+          if (meu_carrinho_cupomAplicado === codigo) { feedback.textContent = 'Este cupom já está aplicado.'; feedback.className = 'text-xs font-medium text-amber-600'; feedback.classList.remove('hidden'); return; }
+          const cuponsValidos = { 'BLUE10': 0.10, 'BEMVINDO': 0.15, 'FRETEGRATIS': 0.05 };
+          if (cuponsValidos[codigo]) {
+            const subtotal = meu_carrinho_itens.reduce((s, i) => s + i.preco * i.qtd, 0);
+            meu_carrinho_desconto = subtotal * cuponsValidos[codigo];
+            meu_carrinho_cupomAplicado = codigo;
+            document.getElementById('desconto-percent').textContent = (cuponsValidos[codigo] * 100) + '%';
+            meu_carrinho_atualizarResumo();
+            feedback.textContent = 'Cupom "' + codigo + '" aplicado! Você economizou R$ ' + meu_carrinho_desconto.toFixed(2).replace('.', ',');
+            feedback.className = 'text-xs font-medium text-emerald-600'; feedback.classList.remove('hidden');
+            input.disabled = true; input.classList.add('bg-gray-50');
+            toast('Cupom aplicado com sucesso!', 'ok');
+          } else {
+            feedback.textContent = 'Cupom inválido. Verifique o código e tente novamente.';
+            feedback.className = 'text-xs font-medium text-red-500'; feedback.classList.remove('hidden');
+            toast('Cupom inválido.', 'erro');
+          }
+        }
+
+        function meu_carrinho_irPagamento() {
+          if (meu_carrinho_itens.length === 0) { toast('Seu carrinho está vazio.', 'erro'); return; }
+          mostrarTela('pagamento');
+        }
+
+        function meu_carrinho_htmlVazio() {
+          return '<div class="text-center py-16 px-5"><div class="w-20 h-20 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4"><svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg></div><h3 class="font-display font-bold text-marca-900 text-lg">Carrinho vazio</h3><p class="text-sm text-gray-400 mt-1">Explore a vitrine e encontre produtos incríveis!</p><button onclick="mostrarTela(\'vitrine\')" class="mt-5 btn-primary px-6 py-2.5 rounded-lg text-sm font-semibold bg-marca-700 text-white hover:bg-marca-800 active:scale-95 transition-all">Ver Produtos</button></div>';
+        }
+      </script>
+    </section>
+
     <!-- TELAS -->
       </main>
 
