@@ -2542,6 +2542,194 @@ if (document.readyState === 'loading') {
       </div>
     </section>
 
+    <section data-tela="administracao" class="hidden">
+    <div class="flex min-h-[100dvh] bg-marca-50/50">
+        <aside class="w-64 bg-marca-900 text-white flex flex-col flex-shrink-0">
+            <div class="p-5 pb-4 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A9 9 0 006 18c1.052 0 2.062-.18 3-.512m0-13.042A8.967 8.967 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A9 9 0 0118 18c-1.052 0-2.062-.18-3-.512"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="font-display font-bold text-lg leading-tight">Painel Admin</h2>
+                        <p class="text-[11px] text-white/50">ConectaPessoas</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 p-3 space-y-0.5 overflow-y-auto" id="admin-nav"></nav>
+            <div class="p-4 border-t border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-marca-700 flex items-center justify-center text-sm font-bold flex-shrink-0">AM</div>
+                    <div class="min-w-0">
+                        <p class="text-sm font-medium truncate">Ana Mendes</p>
+                        <p class="text-[11px] text-white/40">Administradora</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 min-w-0 overflow-y-auto">
+            <div class="p-5 space-y-5 max-w-5xl">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h1 class="font-display font-bold text-xl text-marca-900">Dashboard</h1>
+                        <p class="text-sm text-marca-500 mt-0.5">Visão geral da plataforma</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-marca-400">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span id="admin-clock">Atualizado agora</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="card p-4 cursor-pointer active:scale-[0.97] transition-transform" onclick="mostrarTela('administracao')">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <div class="w-10 h-10 bg-marca-50 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-marca" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-3.4-3.4 9.337 9.337 0 00-4.121.952M15 19.128A48.56 48.56 0 009.88 18.72m-3.424-2.312A48.56 48.56 0 013.24 14.88m3.424-2.312A48.56 48.56 0 018.4 7.152m0 0a48.56 48.56 0 013.424-3.424M15 19.128V18m0 0a48.56 48.56 0 00-2.88-3.424M15 19.128V18"/></svg></div>
+                            <span class="badge badge-success text-[10px]">+8,2%</span>
+                        </div>
+                        <p class="text-[11px] text-marca-500 font-medium uppercase tracking-wide">Usuários ativos</p>
+                        <p class="font-display font-bold text-2xl text-marca-900 mt-0.5">1.247</p>
+                    </div>
+                    <div class="card p-4 cursor-pointer active:scale-[0.97] transition-transform" onclick="mostrarTela('administracao')">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <div class="w-10 h-10 bg-marca-50 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-marca" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg></div>
+                            <span class="badge badge-success text-[10px]">+12%</span>
+                        </div>
+                        <p class="text-[11px] text-marca-500 font-medium uppercase tracking-wide">Anúncios publicados</p>
+                        <p class="font-display font-bold text-2xl text-marca-900 mt-0.5">3.891</p>
+                    </div>
+                    <div class="card p-4 cursor-pointer active:scale-[0.97] transition-transform" onclick="mostrarTela('administracao')">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></div>
+                            <span class="badge badge-success text-[10px]">+23%</span>
+                        </div>
+                        <p class="text-[11px] text-marca-500 font-medium uppercase tracking-wide">Transações/mês</p>
+                        <p class="font-display font-bold text-2xl text-marca-900 mt-0.5">R$ 89.400</p>
+                    </div>
+                    <div class="card p-4 cursor-pointer active:scale-[0.97] transition-transform" onclick="mostrarTela('administracao')">
+                        <div class="flex items-center justify-between mb-2.5">
+                            <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center"><svg class="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                            <span class="badge badge-success text-[10px]">+2,1%</span>
+                        </div>
+                        <p class="text-[11px] text-marca-500 font-medium uppercase tracking-wide">Taxa de aprovação</p>
+                        <p class="font-display font-bold text-2xl text-marca-900 mt-0.5">94%</p>
+                    </div>
+                </div>
+                <div class="card p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="font-display font-bold text-base text-marca-900">Crescimento de usuários</h3>
+                            <p class="text-xs text-marca-500 mt-0.5">Últimos 6 meses</p>
+                        </div>
+                        <div class="flex gap-4 text-[10px]">
+                            <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-marca rounded-full"></span>Usuários</span>
+                            <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-marca-300 rounded-full border-dashed border-t border-marca-400"></span>Tendência</span>
+                        </div>
+                    </div>
+                    <svg viewBox="0 0 340 140" class="w-full h-auto">
+                        <defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2563EB" stop-opacity="0.15"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0"/></linearGradient></defs>
+                        <line x1="30" y1="10" x2="330" y2="10" stroke="#E2E8F0" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        <line x1="30" y1="42" x2="330" y2="42" stroke="#E2E8F0" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        <line x1="30" y1="74" x2="330" y2="74" stroke="#E2E8F0" stroke-width="0.5" stroke-dasharray="3,3"/>
+                        <line x1="30" y1="106" x2="330" y2="106" stroke="#CBD5E1" stroke-width="0.5"/>
+                        <text x="25" y="13" text-anchor="end" font-size="8" fill="#94A3B8" font-family="system-ui">2K</text>
+                        <text x="25" y="45" text-anchor="end" font-size="8" fill="#94A3B8" font-family="system-ui">1.5K</text>
+                        <text x="25" y="77" text-anchor="end" font-size="8" fill="#94A3B8" font-family="system-ui">1K</text>
+                        <text x="25" y="109" text-anchor="end" font-size="8" fill="#94A3B8" font-family="system-ui">500</text>
+                        <text x="30" y="126" text-anchor="middle" font-size="8" fill="#94A3B8" font-family="system-ui">Jul</text>
+                        <text x="86" y="126" text-anchor="middle" font-size="8" fill="#94A3B8" font-family="system-ui">Ago</text>
+                        <text x="142" y="126" text-anchor="middle" font-size="8" fill="#94A3B8" font-family="system-ui">Set</text>
+                        <text x="198" y="126" text-anchor="middle" font-size="8" fill="#94A3B8" font-family="system-ui">Out</text>
+                        <text x="254" y="126" text-anchor="middle" font-size="8" fill="#94A3B8" font-family="system-ui">Nov</text>
+                        <text x="310" y="126" text-anchor="middle" font-size="8" fill="#94A3B8" font-family="system-ui">Dez</text>
+                        <path d="M30 90 L86 68 L142 58 L198 50 L254 34 L310 22 L310 106 L30 106 Z" fill="url(#areaGrad)"/>
+                        <path d="M30 90 L86 68 L142 58 L198 50 L254 34 L310 22" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M30 86 L86 64 L142 54 L198 46 L254 30 L310 18" fill="none" stroke="#93C5FD" stroke-width="1.5" stroke-dasharray="4,3" stroke-linecap="round"/>
+                        <circle cx="30" cy="90" r="4" fill="#2563EB" stroke="white" stroke-width="2"/><circle cx="86" cy="68" r="4" fill="#2563EB" stroke="white" stroke-width="2"/><circle cx="142" cy="58" r="4" fill="#2563EB" stroke="white" stroke-width="2"/><circle cx="198" cy="50" r="4" fill="#2563EB" stroke="white" stroke-width="2"/><circle cx="254" cy="34" r="4" fill="#2563EB" stroke="white" stroke-width="2"/><circle cx="310" cy="22" r="4" fill="#2563EB" stroke="white" stroke-width="2"/>
+                        <text x="86" y="58" text-anchor="middle" font-size="7.5" fill="#1E3A5F" font-weight="700" font-family="system-ui">780</text>
+                        <text x="310" y="14" text-anchor="end" font-size="7.5" fill="#2563EB" font-weight="600" font-family="system-ui">↑ 62%</text>
+                    </svg>
+                </div>
+                <div class="card overflow-hidden">
+                    <div class="p-4 pb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <h3 class="font-display font-bold text-base text-marca-900">Denúncias pendentes</h3>
+                            <p class="text-xs text-marca-500 mt-0.5">Requer atenção imediata</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="relative flex-1 sm:flex-none">
+                                <svg class="w-4 h-4 text-marca-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                                <input type="text" id="admin-search" placeholder="Buscar..." class="w-full sm:w-48 pl-9 pr-3 py-1.5 bg-marca-50 border border-marca-100 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-marca/20 focus:border-marca transition-all" oninput="administracao_filter()">
+                            </div>
+                            <select id="admin-filter" class="px-3 py-1.5 bg-marca-50 border border-marca-100 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-marca/20 text-marca-700 cursor-pointer" onchange="administracao_filter()">
+                                <option value="all">Todos</option><option value="spam">Spam</option><option value="fraude">Fraude</option><option value="produto">Produto</option><option value="conduta">Conduta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto -mx-1">
+                        <table class="w-full text-left text-xs">
+                            <thead><tr class="border-t border-b border-marca-100 bg-marca-50/60">
+                                <th class="px-4 py-2.5 font-semibold text-marca-500 text-[10px] uppercase tracking-wider">Usuário</th>
+                                <th class="px-4 py-2.5 font-semibold text-marca-500 text-[10px] uppercase tracking-wider">Motivo</th>
+                                <th class="px-4 py-2.5 font-semibold text-marca-500 text-[10px] uppercase tracking-wider">Data</th>
+                                <th class="px-4 py-2.5 font-semibold text-marca-500 text-[10px] uppercase tracking-wider">Status</th>
+                                <th class="px-4 py-2.5 font-semibold text-marca-500 text-[10px] uppercase tracking-wider text-right">Ações</th>
+                            </tr></thead>
+                            <tbody id="admin-complaints-body"></tbody>
+                        </table>
+                    </div>
+                    <div id="admin-empty-state" class="hidden p-10 text-center">
+                        <svg class="w-12 h-12 text-marca-200 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                        <p class="text-sm text-marca-400">Nenhuma denúncia encontrada</p>
+                        <p class="text-xs text-marca-300 mt-1">Tente ajustar os filtros</p>
+                    </div>
+                </div>
+                <div class="card p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <svg class="w-4 h-4 text-marca" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                        <h3 class="font-display font-bold text-sm text-marca-900">Indicadores de saúde da plataforma</h3>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="bg-green-50 rounded-xl p-3 text-center border border-green-100">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2"><svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
+                            <p class="font-display font-bold text-lg text-green-800">99,9%</p>
+                            <p class="text-[10px] text-green-600 font-medium">Uptime</p>
+                        </div>
+                        <div class="bg-green-50 rounded-xl p-3 text-center border border-green-100">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2"><svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg></div>
+                            <p class="font-display font-bold text-lg text-green-800">0,02%</p>
+                            <p class="text-[10px] text-green-600 font-medium">Taxa de erro</p>
+                        </div>
+                        <div class="bg-marca-50 rounded-xl p-3 text-center border border-marca-100">
+                            <div class="w-8 h-8 bg-marca-100 rounded-full flex items-center justify-center mx-auto mb-2"><svg class="w-4 h-4 text-marca" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                            <p class="font-display font-bold text-lg text-marca-800">142ms</p>
+                            <p class="text-[10px] text-marca font-medium">Tempo médio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+    (function(){
+        var navItems=[{id:'dashboard',icon:'home',label:'Dashboard',dest:'administracao'},{id:'usuarios',icon:'users',label:'Usuários',dest:'administracao'},{id:'anuncios',icon:'tag',label:'Anúncios',dest:'administracao'},{id:'categorias',icon:'folder',label:'Categorias',dest:'administracao'},{id:'pedidos',icon:'cart',label:'Pedidos',dest:'administracao'},{id:'pagamentos',icon:'card',label:'Pagamentos',dest:'administracao'},{id:'denuncias',icon:'shield',label:'Denúncias',dest:'administracao'},{id:'config',icon:'settings',label:'Configurações',dest:'administracao'}];
+        var icons={home:'<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5"/>',users:'<path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-3.4-3.4 9.337 9.337 0 00-4.121.952M15 19.128A48.56 48.56 0 009.88 18.72m-3.424-2.312A48.56 48.56 0 013.24 14.88m3.424-2.312A48.56 48.56 0 018.4 7.152m0 0a48.56 48.56 0 013.424-3.424M15 19.128V18m0 0a48.56 48.56 0 00-2.88-3.424M15 19.128V18"/>',tag:'<path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/>',folder:'<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"/>',cart:'<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/>',card:'<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3 2.25h3m-9.75-6.75h16.5a1.125 1.125 0 001.125-1.125V6.375c0-1.036-.84-1.875-1.875-1.875H3.375A1.875 1.875 0 001.5 6.375v10.75c0 .621.504 1.125 1.125 1.125z"/>',shield:'<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>',settings:'<path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003 1.008c-.253.255-.427.577-.476.914l-.237 1.341c-.042.242.085.482.33.576.247.094.532.06.742-.104l1.303-.803c.343-.211.462-.635.282-.988l-.457-1.216a1.125 1.125 0 01.124-1.075c.044-.073.087-.146.127-.22.184-.332.496-.582.87-.645l1.281-.213c.542-.09.94-.56.94-1.11v-2.593c0-.55-.398-1.02-.94-1.11l-1.281-.213c-.374-.063-.686-.313-.87-.645-.04-.074-.083-.147-.127-.22a1.124 1.124 0 01-.124-1.075c.094-.323.257-.72.124-1.075l-.456-1.217a1.125 1.125 0 01.49-1.37l2.247-1.296a1.125 1.125 0 011.431.26l1.008 1.003c.255.253.577.427.914.476l1.341.237c.242.042.482-.085.576-.33.094-.247.06-.532-.104-.742l-.803-1.303a1.125 1.125 0 01-.988-.282l-1.216.457a1.125 1.125 0 01-1.075.124c-.073-.044-.146-.087-.22-.127a1.124 1.124 0 01-.87-.645l-.213-1.281c-.09-.542-.56-.94-1.11-.94h-2.593c-.55 0-1.02.398-1.11.94l-.213 1.281c-.063.374-.313.686-.645.87-.074.04-.147.083-.22.127-.324.196-.72.257-1.075.124l-1.217.456a1.125 1.125 0 01-1.37-.49l-1.296-2.247a1.125 1.125 0 01.26-1.431l1.003-1.008c.253-.255.427-.577.476-.914l.237-1.341c.042-.242-.085-.482-.33-.576-.247-.094-.532-.06-.742.104L7.741 6.86c-.343.211-.462.635-.282.988l.457 1.216a1.125 1.125 0 01-.124 1.075c-.044.073-.087.146-.127.22a1.124 1.124 0 01-.28.56l-1.003 1.003a1.125 1.125 0 01-1.431.26l-2.247-1.296a1.125 1.125 0 01-.26-1.431l1.003-1.008c.253-.255.427-.577.476-.914l.237-1.341c.042-.242-.085-.482-.33-.576-.247-.094-.532-.06-.742.104L3.18 9.36a1.125 1.125 0 01-.988-.282L.976 8.105a1.125 1.125 0 01.49-1.37l2.247-1.296a1.125 1.125 0 011.431.26l1.008 1.003c.255.253.577.427.914.476l1.341.237c.242.042.482-.085.576-.33.094-.247.06-.532-.104-.742l-.803-1.303z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>'};
+        function getIcon(n){return '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">'+((icons[n]||'')+'</svg>');}
+        var nav=document.getElementById('admin-nav');
+        if(nav){navItems.forEach(function(it){var a=document.createElement('a');a.href='#';a.className='flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/70 hover:bg-white/10 hover:text-white transition-all cursor-pointer';a.innerHTML=getIcon(it.icon)+'<span>'+it.label+'</span>';a.addEventListener('click',function(e){e.preventDefault();mostrarTela(it.dest);toast(it.label+': módulo em desenvolvimento','info');});nav.appendChild(a);});}
+        window.administracao_complaints=[
+            {id:1,name:'Carlos Eduardo S.',initials:'CE',color:'#E74C3C',reason:'Fraude — produto não recebido',type:'fraude',date:'2025-12-18',status:'pendente',details:'Cliente alega ter pago R$ 450,00 e não recebeu o produto em 15 dias úteis.'},{id:2,name:'Maria Fernanda L.',initials:'MF',color:'#9B59B6',reason:'Spam — ofertas enganosas',type:'spam',date:'2025-12-17',status:'pendente',details:'Anúncio contém promoção falsa de "70% OFF" sem condições reais.'},{id:3,name:'João Pedro R.',initials:'JP',color:'#2ECC71',reason:'Conduta inadequada',type:'conduta',date:'2025-12-17',status:'pendente',details:'Usuário enviou mensagens ofensivas a três vendedores diferentes.'},{id:4,name:'Ana Beatriz M.',initials:'AB',color:'#E67E22',reason:'Produto proibido',type:'produto',date:'2025-12-16',status:'pendente',details:'Anúncio de suplemento sem registro na ANVISA.'},{id:5,name:'Roberto Carlos F.',initials:'RC',color:'#1ABC9C',reason:'Fraude — dados falsos',type:'fraude',date:'2025-12-16',status:'revisado',details:'CPF e endereço divergentes em dois anúncios do mesmo usuário.'},{id:6,name:'Fernanda Costa P.',initials:'FC',color:'#3498DB',reason:'Spam — repetição de anúncios',type:'spam',date:'2025-12-15',status:'pendente',details:'Mesmo anúncio publicado 8 vezes com variações mínimas.'},{id:7,name:'Lucas A.',initials:'LA',color:'#F39C12',reason:'Conduta inadequada',type:'conduta',date:'2025-12-15',status:'pendente',details:'Usuário compartilhando contato externo nas mensagens.'},{id:8,name:'Patricia M.',initials:'PM',color:'#8E44AD',reason:'Produto proibido',type:'produto',date:'2025-12-14',status:'revisado',details:'Venda de arma de airsoft sem licença declarada.'}];
+        window.administracao_filter=function(){var q=(document.getElementById('admin-search').value||'').toLowerCase();var f=document.getElementById('admin-filter').value;var tbody=document.getElementById('admin-complaints-body');var empty=document.getElementById('admin-empty-state');var list=window.administracao_complaints;var filtered=list.filter(function(c){var mq=!q||c.name.toLowerCase().indexOf(q)!==-1||c.reason.toLowerCase().indexOf(q)!==-1;var mf=f==='all'||c.type===f;return mq&&mf;});if(!filtered.length){tbody.innerHTML='';empty.classList.remove('hidden');return;}empty.classList.add('hidden');var badges={fraude:'badge-danger',spam:'badge-warning',conduta:'badge-warning',produto:'badge-danger'};var statusBadge={pendente:'badge-warning',revisado:'badge-success',ignorado:'badge-neutral'};var statusLabel={pendente:'Pendente',revisado:'Revisado',ignorado:'Ignorado'};tbody.innerHTML=filtered.map(function(c){return '<tr class="border-b border-marca-100/60 hover:bg-marca-50/50 transition-colors"><td class="px-4 py-3"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0" style="background-color:'+c.color+'">'+c.initials+'</div><span class="font-medium text-marca-800">'+c.name+'</span></div></td><td class="px-4 py-3 text-marca-600">'+c.reason+'</td><td class="px-4 py-3 text-marca-400 whitespace-nowrap">'+c.date+'</td><td class="px-4 py-3"><span class="badge '+statusBadge[c.status]+'">'+statusLabel[c.status]+'</span></td><td class="px-4 py-3 text-right whitespace-nowrap"><button class="text-marca hover:text-marca-800 font-medium text-[11px] transition-colors" onclick="administracao_review('+c.id+')">Revisar</button> <button class="text-marca-400 hover:text-marca-600 ml-2 text-[11px] transition-colors" onclick="administracao_ignore('+c.id+')">Ignorar</button></td></tr>';}).join('');};
+        window.administracao_review=function(id){var c=window.administracao_complaints.find(function(x){return x.id===id;});if(!c)return;var html='<div class="space-y-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color:'+c.color+'">'+c.initials+'</div><div><p class="font-display font-bold text-marca-900">'+c.name+'</p><p class="text-xs text-marca-500">Denúncia #'+String(c.id).padStart(4,'0')+'</p></div></div><div class="bg-marca-50 rounded-lg p-3 space-y-2"><div class="flex justify-between text-xs"><span class="text-marca-500">Motivo</span><span class="text-marca-800 font-medium">'+c.reason+'</span></div><div class="flex justify-between text-xs"><span class="text-marca-500">Data</span><span class="text-marca-800">'+c.date+'</span></div><div class="flex justify-between text-xs"><span class="text-marca-500">Status</span><span class="badge badge-warning">Pendente</span></div></div><div><p class="text-xs text-marca-500 mb-1">Detalhes</p><p class="text-sm text-marca-700 bg-white border border-marca-100 rounded-lg p-3">'+c.details+'</p></div><div class="flex gap-2 pt-2"><button class="btn btn-primary flex-1 text-sm" onclick="administracao_confirmReview('+c.id+');fecharModal();">Confirmar revisão</button><button class="btn flex-1 text-sm" style="background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;" onclick="administracao_banUser('+c.id+');fecharModal();">Banir usuário</button><button class="btn text-sm" style="background:#F1F5F9;color:#64748B;border:1px solid #E2E8F0;" onclick="fecharModal();">Cancelar</button></div></div>';abrirModal(html,'Revisar Denúncia');};
+        window.administracao_ignore=function(id){var html='<div class="space-y-4"><p class="text-sm text-marca-600">Deseja ignorar esta denúncia? Esta ação não pode ser desfeita.</p><div class="flex gap-2 pt-2"><button class="btn flex-1 text-sm" style="background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;" onclick="administracao_doIgnore('+id+');fecharModal();">Sim, ignorar</button><button class="btn text-sm" style="background:#F1F5F9;color:#64748B;border:1px solid #E2E8F0;" onclick="fecharModal();">Cancelar</button></div></div>';abrirModal(html,'Ignorar Denúncia');};
+        window.administracao_confirmReview=function(id){var c=window.administracao_complaints.find(function(x){return x.id===id;});if(c){c.status='revisado';administracao_filter();}toast('Denúncia #'+String(id).padStart(4,'0')+' revisada com sucesso','ok');};
+        window.administracao_banUser=function(id){var c=window.administracao_complaints.find(function(x){return x.id===id;});if(c){c.status='ignorado';administracao_filter();}toast('Usuário '+c.name+' foi banido da plataforma','info');};
+        window.administracao_doIgnore=function(id){var c=window.administracao_complaints.find(function(x){return x.id===id;});if(c){c.status='ignorado';administracao_filter();}toast('Denúncia ignorada','ok');};
+        administracao_filter();
+        var clk=document.getElementById('admin-clock');
+        if(clk){var d=new Date();clk.textContent='Atualizado '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});}
+    })();
+    </script>
+</section>
+
     <!-- TELAS -->
       </main>
 
